@@ -14,8 +14,8 @@ import toml
 TEMP_TAR = 'temp.tar'
 CRATES_PATH = './crates'
 
-CRATE = 'serde_derive'
-VERSION = '1.0.136'
+CRATE = 'serde_json'
+VERSION = '1.0.79'
 
 # Fetch the crate
 r = requests.get('https://crates.io/api/v1/crates/%s/%s/download'%(CRATE, VERSION))
@@ -43,4 +43,4 @@ tar.extractall(CRATES_PATH)
 # Load the Cargo.toml
 manifest = toml.load(open('%s/%s-%s/Cargo.toml'%(CRATES_PATH, CRATE, VERSION)))
 
-print(manifest)
+print(manifest.keys())

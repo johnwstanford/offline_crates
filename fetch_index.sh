@@ -1,0 +1,1 @@
+git clone https://github.com/rust-lang/crates.io-index.git
